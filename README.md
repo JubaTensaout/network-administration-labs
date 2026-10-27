@@ -1,72 +1,46 @@
-VLAN Segmentation, Inter-VLAN Routing & ACL
+# Network Administration Labs
 
-Overview
+## About This Portfolio
 
-This lab demonstrates how to configure VLAN segmentation, establish communication between different VLANs using Router-on-a-Stick, and implement an Access Control List (ACL) to restrict traffic between departments.
+This repository contains practical labs in network administration, network security, Linux system administration, and cloud technologies.
 
-The lab was built and tested using Cisco Packet Tracer.
+Each lab focuses on hands-on configuration, verification, troubleshooting, and technical documentation.
 
-Objectives
+## Labs
 
-- Create and configure VLANs.
-- Assign switch ports to the appropriate VLANs.
-- Configure 802.1Q trunk links.
-- Implement inter-VLAN routing using a Cisco router.
-- Configure an extended ACL to restrict communication between departments.
-- Verify connectivity using ICMP ping tests.
+### 01 - Switching and VLANs
 
-Network Topology
+- [Lab 01: VLAN, Inter-VLAN Routing and ACL](01-switching-vlans/01-vlan-intervlan/README.md)
 
-Devices
+### 02 - Routing
 
-- 2 × Cisco Catalyst 2960 switches
-- 1 × Cisco 2911 router
-- 6 × PCs
+- Lab 02: Static Routing Between Two Networks (planned)
 
-VLAN and IP Addressing Plan
+### 03 - Network Security
 
-VLAN| Department| Network| Default Gateway
-10| Development| 192.168.10.0/24| 192.168.10.1
-20| HR| 192.168.20.0/24| 192.168.20.1
-30| Administration| 192.168.30.0/24| 192.168.30.1
+- Labs to be added.
 
-Technologies and Concepts
+### 04 - Linux Administration
 
-- Cisco IOS
-- VLANs and access ports
-- IEEE 802.1Q trunking
-- Router-on-a-Stick
-- Extended Access Control Lists (ACLs)
-- ICMP connectivity testing
-- IPv4 addressing and subnet masks
+- Labs to be added.
 
-ACL Configuration
+### 05 - Docker and Kubernetes
 
-An extended ACL was configured on the router to block traffic originating from the HR network and destined for the Development network.
+- Labs to be added.
 
-ip access-list extended BLOCK-RH-TO-DEV
- deny ip 192.168.20.0 0.0.0.255 192.168.10.0 0.0.0.255
- permit ip any any
+### 06 - Monitoring and Troubleshooting
 
-The ACL was applied inbound on subinterface "GigabitEthernet0/0.20".
+- Labs to be added.
 
-Verification and Results
+## Technologies
 
-- Communication within the same VLAN: successful.
-- Inter-VLAN routing: successful before applying the ACL.
-- Communication between Development and Administration: successful.
-- Traffic from HR to Development: blocked by the ACL.
-- Ping tests between HR and Development: unsuccessful, as the ACL also blocks the ICMP reply traffic.
+- Cisco Packet Tracer and Cisco IOS
+- TCP/IP, VLANs, trunking, and static routing
+- Access Control Lists (ACLs)
+- Linux
+- Docker and Kubernetes
+- Wireshark
 
-Files
+## Author
 
-- "01-vlan-intervlan.pkt" — Cisco Packet Tracer project file.
-
-Skills Demonstrated
-
-Network segmentation, switch configuration, trunking, inter-VLAN routing, ACL implementation, and network troubleshooting.
-
----
-
-Author: Juba Tensaout
-Field: Network Administration & Security
+Juba Tensaout
